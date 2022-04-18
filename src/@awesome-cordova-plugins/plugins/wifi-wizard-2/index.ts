@@ -512,6 +512,29 @@ export class WifiWizard2 extends AwesomeCordovaNativePlugin {
   }
 
   /**
+   * Specifier for connect to network with specified SSID and Password
+   * Author: Mathias Scavello (info at mathiasscavello dot com)
+   *
+   * @param {string|int} [SSID]
+   * @param {string} [password=]
+   * @param {string} [alhorithm=OPEN] OPEN|WEP|WPA|WPA2|WPA3
+   * @param {booleab} [isHiddenSSID]
+   * @returns {Promise<any>}
+   */
+  @Cordova({
+    otherPromise: true,
+    platforms: ['Android'],
+  })
+  suggestConnection(
+    SSID: string | number,
+    password?: string,
+    algorithm?: string,
+    isHiddenSSID?: boolean
+  ): Promise<any> {
+    return;
+  }
+
+  /**
    * Disconnect (current if SSID not supplied)
    *
    * This method, if passed an SSID, will first disable the network, and then remove it from the device.  To only "disconnect" (ie disable in android),
